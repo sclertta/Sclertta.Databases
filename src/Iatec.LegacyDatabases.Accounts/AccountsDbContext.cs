@@ -128,6 +128,8 @@ namespace Iatec.LegacyDatabases
 
                 entity.Property(e => e.Email).HasMaxLength(100);
 
+                entity.Property(e => e.Provider).HasColumnName("ProviderEnum");
+
                 entity.Property(e => e.Uid)
                     .HasColumnName("UId")
                     .HasMaxLength(255)

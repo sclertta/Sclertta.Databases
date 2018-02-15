@@ -37,7 +37,7 @@ namespace Iatec.LegacyDatabases.Applications
         public bool? IsAuthProvidersAllowed { get; set; }
         public bool IsKeepMeSignedInAllowed { get; set; }
         public bool AllowOtherProblemsInCredRecovery { get; set; }
-        public int OidcFlowEnum { get; set; }
+        public OidcFlowEnum OidcFlowEnum { get; set; }
         public bool IsPublic { get; set; }
         public Guid? AppSolutionId { get; set; }
         public bool UseTermsOfApplication { get; set; }

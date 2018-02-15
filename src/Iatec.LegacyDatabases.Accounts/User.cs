@@ -18,7 +18,7 @@ namespace Iatec.LegacyDatabases.Accounts
         public string Email { get; set; }
         public Guid? DomainId { get; set; }
         public Guid? LocationId { get; set; }
-        public int? ProviderEnum { get; set; }
+        public ProviderEnum? Provider { get; set; }
         public bool IsRegistrationCompleted { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? CreationDate { get; set; }
