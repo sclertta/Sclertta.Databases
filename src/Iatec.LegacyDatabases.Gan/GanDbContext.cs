@@ -7,7 +7,7 @@ namespace Iatec.LegacyDatabases
 {
     public partial class GanDbContext : DbContext
     {
-        public virtual DbSet<GanUser> ElAccountsGanuser { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         public GanDbContext(DbContextOptions<GanDbContext> options) : base(options)
         {
@@ -16,7 +16,7 @@ namespace Iatec.LegacyDatabases
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GanUser>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.UserId);
 

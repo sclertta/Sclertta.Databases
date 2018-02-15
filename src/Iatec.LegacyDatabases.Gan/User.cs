@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Iatec.LegacyDatabases.Gan
 {
-    public partial class GanUser
+    public partial class User
     {
         public Guid UserId { get; set; }
         public DateTime? LastActivityDate { get; set; }

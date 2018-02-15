@@ -7,13 +7,13 @@ namespace Iatec.LegacyDatabases
 {
     public partial class AccountsDbContext : DbContext
     {
-        public virtual DbSet<Group> ElAccountsGroup { get; set; }
-        public virtual DbSet<Location> ElAccountsLocation { get; set; }
-        public virtual DbSet<PolicyPlace> ElAccountsPolicyplace { get; set; }
-        public virtual DbSet<Responsible> ElAccountsResponsible { get; set; }
-        public virtual DbSet<User> ElAccountsUser { get; set; }
-        public virtual DbSet<UserActivity> ElAccountsUseractivity { get; set; }
-        public virtual DbSet<UserGroup> ElAccountsUsergroup { get; set; }
+        public virtual DbSet<Group> Group { get; set; }
+        public virtual DbSet<Location> Location { get; set; }
+        public virtual DbSet<PolicyPlace> PolicyPlace { get; set; }
+        public virtual DbSet<Responsible> Responsible { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserActivity> UserActivity { get; set; }
+        public virtual DbSet<UserGroup> UserGroup { get; set; }
 
         public AccountsDbContext(DbContextOptions<AccountsDbContext> options) : base(options)
         {

@@ -7,14 +7,14 @@ namespace Iatec.LegacyDatabases
 {
     public partial class AccessControlDbContext : DbContext
     {
-        public virtual DbSet<Asset> ElAccesscontrolAsset { get; set; }
-        public virtual DbSet<AssetType> ElAccesscontrolAssetType { get; set; }
-        public virtual DbSet<ConstraintDefinition> ElAccesscontrolConstraintdefinition { get; set; }
-        public virtual DbSet<ConstraintItem> ElAccesscontrolConstraintitem { get; set; }
-        public virtual DbSet<Permission> ElAccesscontrolPermission { get; set; }
-        public virtual DbSet<Role> ElAccesscontrolRole { get; set; }
-        public virtual DbSet<RoleConstraint> ElAccesscontrolRoleconstraint { get; set; }
-        public virtual DbSet<RoleMember> ElAccesscontrolRolemember { get; set; }
+        public virtual DbSet<Asset> Asset { get; set; }
+        public virtual DbSet<AssetType> AssetType { get; set; }
+        public virtual DbSet<ConstraintDefinition> ConstraintDefinition { get; set; }
+        public virtual DbSet<ConstraintItem> ConstraintItem { get; set; }
+        public virtual DbSet<Permission> Permission { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<RoleConstraint> RoleConstraint { get; set; }
+        public virtual DbSet<RoleMember> RoleMember { get; set; }
    
         public AccessControlDbContext(DbContextOptions<AccessControlDbContext> options) : base(options)
         {
