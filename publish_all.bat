@@ -1,1 +1,0 @@
-@powershell -executionpolicy remotesigned -file ./publish_all.ps1

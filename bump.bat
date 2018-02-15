@@ -1,0 +1,1 @@
+@powershell -executionpolicy remotesigned -file ./bump.ps1 %*
