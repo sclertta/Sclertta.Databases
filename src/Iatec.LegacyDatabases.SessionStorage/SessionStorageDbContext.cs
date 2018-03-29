@@ -7,7 +7,7 @@ namespace Iatec.LegacyDatabases
 {
     public partial class SessionStorageDbContext : DbContext
     {
-        public virtual DbSet<StateItem> StateItem { get; set; }
+        public virtual DbSet<StateItem> StateItems { get; set; }
         public SessionStorageDbContext(DbContextOptions<SessionStorageDbContext> options) : base(options)
         {
 
