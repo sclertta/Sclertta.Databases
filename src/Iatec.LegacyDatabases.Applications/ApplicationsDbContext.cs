@@ -7,36 +7,36 @@ namespace Iatec.LegacyDatabases
 {
     public partial class ApplicationsDbContext : DbContext
     {
-        public virtual DbSet<AllowedScope> AllowedScope { get; set; }
-        public virtual DbSet<AppCategory> AppCategory { get; set; }
-        public virtual DbSet<AppDeploy> AppDeploy { get; set; }
-        public virtual DbSet<AppDeployHelp> AppDeployHelp { get; set; }
-        public virtual DbSet<AppDeployHelpContent> AppDeployHelpContent { get; set; }
-        public virtual DbSet<AppDeploySecret> AppDeploySecret { get; set; }
-        public virtual DbSet<Applications.AppDomain> AppDomain { get; set; }
-        public virtual DbSet<AppHub> AppHub { get; set; }
-        public virtual DbSet<AppSolution> AppSolution { get; set; }
-        public virtual DbSet<AppTermsOfUse> AppTermsOfUse { get; set; }
-        public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<ClientLicense> ClientLicense { get; set; }
-        public virtual DbSet<ExecutionType> ExecutionType { get; set; }
-        public virtual DbSet<FileContent> FileContent { get; set; }
-        public virtual DbSet<ImageStorage> ImageStorage { get; set; }
-        public virtual DbSet<InfraOwner> InfraOwner { get; set; }
-        public virtual DbSet<Infrastructure> Infrastructure { get; set; }
-        public virtual DbSet<InstallationHistory> InstallationHistory { get; set; }
-        public virtual DbSet<Notification> Notification { get; set; }
-        public virtual DbSet<NotificationUser> NotificationUser { get; set; }
-        public virtual DbSet<Organization> Organization { get; set; }
-        public virtual DbSet<OrgResponsible> OrgResponsible { get; set; }
-        public virtual DbSet<Package> Package { get; set; }
-        public virtual DbSet<PackageLink> PackageLink { get; set; }
-        public virtual DbSet<PackageRelease> PackageRelease { get; set; }
-        public virtual DbSet<PackageType> PackageType { get; set; }
-        public virtual DbSet<Region> Region { get; set; }
+        public virtual DbSet<AllowedScope> AllowedScopes { get; set; }
+        public virtual DbSet<AppCategory> AppCategories { get; set; }
+        public virtual DbSet<AppDeploy> AppDeploys { get; set; }
+        public virtual DbSet<AppDeployHelp> AppDeployHelps { get; set; }
+        public virtual DbSet<AppDeployHelpContent> AppDeployHelpContents { get; set; }
+        public virtual DbSet<AppDeploySecret> AppDeploySecrets { get; set; }
+        public virtual DbSet<Applications.AppDomain> AppDomains { get; set; }
+        public virtual DbSet<AppHub> AppHubs { get; set; }
+        public virtual DbSet<AppSolution> AppSolutions { get; set; }
+        public virtual DbSet<AppTermsOfUse> AppTermsOfUses { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<ClientLicense> ClientLicenses { get; set; }
+        public virtual DbSet<ExecutionType> ExecutionTypes { get; set; }
+        public virtual DbSet<FileContent> FileContents { get; set; }
+        public virtual DbSet<ImageStorage> ImageStorages { get; set; }
+        public virtual DbSet<InfraOwner> InfraOwners { get; set; }
+        public virtual DbSet<Infrastructure> Infrastructures { get; set; }
+        public virtual DbSet<InstallationHistory> InstallationHistories { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
+        public virtual DbSet<NotificationUser> NotificationUsers { get; set; }
+        public virtual DbSet<Organization> Organizations { get; set; }
+        public virtual DbSet<OrgResponsible> OrgResponsibles { get; set; }
+        public virtual DbSet<Package> Packages { get; set; }
+        public virtual DbSet<PackageLink> PackageLinks { get; set; }
+        public virtual DbSet<PackageRelease> PackageReleases { get; set; }
+        public virtual DbSet<PackageType> PackageTypes { get; set; }
+        public virtual DbSet<Region> Regions { get; set; }
         public virtual DbSet<RegionalSettings> RegionalSettings { get; set; }
-        public virtual DbSet<Scope> Scope { get; set; }
-        public virtual DbSet<ScopeSecret> ScopeSecret { get; set; }
+        public virtual DbSet<Scope> Scopes { get; set; }
+        public virtual DbSet<ScopeSecret> ScopeSecrets { get; set; }
 
         public ApplicationsDbContext(DbContextOptions<ApplicationsDbContext> options) : base(options)
         {
