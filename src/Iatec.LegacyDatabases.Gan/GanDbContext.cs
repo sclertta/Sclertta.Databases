@@ -7,7 +7,7 @@ namespace Iatec.LegacyDatabases
 {
     public partial class GanDbContext : DbContext
     {
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         public GanDbContext(DbContextOptions<GanDbContext> options) : base(options)
         {
