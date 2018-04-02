@@ -169,6 +169,7 @@ namespace Iatec.LegacyDatabases
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserActivities)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__el_accoun__UserI__1DE57479");
             });
 
@@ -182,14 +183,14 @@ namespace Iatec.LegacyDatabases
 
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.UserGroups)
-                    .HasForeignKey(d => d.GroupId)
+                    .HasForeignKey(d => d.GroupId)  
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__el_accoun__Group__1ED998B2");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserGroups)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__el_accoun__UserI__1FCDBCEB");
             });
         }
