@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.AccessControl", "Iatec.Databases.AccessControl\Iatec.Databases.AccessControl.csproj", "{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Accounts", "Iatec.Databases.Accounts\Iatec.Databases.Accounts.csproj", "{B7D8C167-1F83-42BC-90A0-3C31695EEDAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Applications", "Iatec.Databases.Applications\Iatec.Databases.Applications.csproj", "{0286207F-D87F-4384-B32B-390E449509E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Gan", "Iatec.Databases.Gan\Iatec.Databases.Gan.csproj", "{24C265C9-6F98-4731-BAEA-793FEC140139}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.SessionStorage", "Iatec.Databases.SessionStorage\Iatec.Databases.SessionStorage.csproj", "{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D8C167-1F83-42BC-90A0-3C31695EEDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D8C167-1F83-42BC-90A0-3C31695EEDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D8C167-1F83-42BC-90A0-3C31695EEDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D8C167-1F83-42BC-90A0-3C31695EEDAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0286207F-D87F-4384-B32B-390E449509E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0286207F-D87F-4384-B32B-390E449509E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0286207F-D87F-4384-B32B-390E449509E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0286207F-D87F-4384-B32B-390E449509E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C265C9-6F98-4731-BAEA-793FEC140139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C265C9-6F98-4731-BAEA-793FEC140139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C265C9-6F98-4731-BAEA-793FEC140139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C265C9-6F98-4731-BAEA-793FEC140139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {192A95FE-9DE2-4001-A8FE-EBD2F5834C40}
+	EndGlobalSection
+EndGlobal

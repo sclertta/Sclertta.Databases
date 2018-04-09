@@ -19,7 +19,7 @@ foreach ($project in $projects) {
     $startInfo.CreateNoWindow = $true
     $startInfo.RedirectStandardOutput = $true 
     $startInfo.UseShellExecute = $false
-    $startInfo.WorkingDirectory = ".\src\Iatec.LegacyDatabases.$project"
+    $startInfo.WorkingDirectory = ".\src\Iatec.Databases.$project"
 
     $process = New-Object System.Diagnostics.Process 
     $process.StartInfo = $startInfo 

@@ -7,11 +7,11 @@
 )
 
 foreach ($project in $projects) {
-  Remove-Item "src\Iatec.LegacyDatabases.$project\bin\*\Iatec.LegacyDatabases.$project.*.nupkg" -Force
-  dotnet pack "src\Iatec.LegacyDatabases.$project" -c Release
+  Remove-Item "src\Iatec.Databases.$project\bin\*\Iatec.Databases.$project.*.nupkg" -Force
+  dotnet pack "src\Iatec.Databases.$project" -c Release
 }
 
 
 foreach ($project in $projects) {
-  nuget.exe push -Source "EnterpriseLibrary" -ApiKey VSTS "src\Iatec.LegacyDatabases.$project\bin\Release\Iatec.LegacyDatabases.$project.*.nupkg"
+  nuget.exe push -Source "EnterpriseLibrary" -ApiKey VSTS "src\Iatec.Databases.$project\bin\Release\Iatec.Databases.$project.*.nupkg"
 }
