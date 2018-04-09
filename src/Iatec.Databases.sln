@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Gan", "Iate
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.SessionStorage", "Iatec.Databases.SessionStorage\Iatec.Databases.SessionStorage.csproj", "{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Aps", "Iatec.Databases.Aps\Iatec.Databases.Aps.csproj", "{3B85DC33-6209-4CCF-8A11-704440A5CD20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
