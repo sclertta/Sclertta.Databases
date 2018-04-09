@@ -2,6 +2,7 @@
     "AccessControl",
     "Accounts",
     "Applications",
+	"Aps",
     "Gan",
     "SessionStorage"
 )
