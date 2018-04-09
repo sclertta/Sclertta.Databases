@@ -7,7 +7,6 @@ namespace Iatec.Databases
     {
         public ApsDbContext(DbContextOptions<ApsDbContext> options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

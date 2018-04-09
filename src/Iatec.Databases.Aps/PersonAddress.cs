@@ -24,7 +24,7 @@ namespace Iatec.Databases.Aps
         [Column("char_3")]
         public string Supplement { get; set; }
         [Column("char_4")]
-        public string ZipCode { get; set; }
+        public string Zip { get; set; }
         [Column("char_5")]
         public string Char5 { get; set; }
         [ForeignKey("id_status")]
