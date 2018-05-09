@@ -8,8 +8,8 @@ namespace Iatec.Databases.Applications
         public Client()
         {
             ClientLicense = new HashSet<ClientLicense>();
-            OrgResponsible = new HashSet<OrgResponsible>();
-            PackageRelease = new HashSet<PackageRelease>();
+            OrgResponsibles = new HashSet<OrgResponsible>();
+            PackageReleases = new HashSet<PackageRelease>();
         }
 
         public Guid ClientId { get; set; }
@@ -20,7 +20,7 @@ namespace Iatec.Databases.Applications
         public string LastName { get; set; }
 
         public ICollection<ClientLicense> ClientLicense { get; set; }
-        public ICollection<OrgResponsible> OrgResponsible { get; set; }
-        public ICollection<PackageRelease> PackageRelease { get; set; }
+        public ICollection<OrgResponsible> OrgResponsibles { get; set; }
+        public ICollection<PackageRelease> PackageReleases { get; set; }
     }
 }

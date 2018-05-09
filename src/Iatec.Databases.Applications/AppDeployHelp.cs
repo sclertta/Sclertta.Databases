@@ -7,8 +7,8 @@ namespace Iatec.Databases.Applications
     {
         public AppDeployHelp()
         {
-            AppDeployHelpContent = new HashSet<AppDeployHelpContent>();
-            InverseParentAppDeployHelp = new HashSet<AppDeployHelp>();
+            AppDeployHelpContents = new HashSet<AppDeployHelpContent>();
+            InverseParentAppDeployHelps = new HashSet<AppDeployHelp>();
         }
 
         public Guid AppDeployHelpId { get; set; }
@@ -24,7 +24,7 @@ namespace Iatec.Databases.Applications
 
         public AppDeploy AppDeploy { get; set; }
         public AppDeployHelp ParentAppDeployHelp { get; set; }
-        public ICollection<AppDeployHelpContent> AppDeployHelpContent { get; set; }
-        public ICollection<AppDeployHelp> InverseParentAppDeployHelp { get; set; }
+        public ICollection<AppDeployHelpContent> AppDeployHelpContents { get; set; }
+        public ICollection<AppDeployHelp> InverseParentAppDeployHelps { get; set; }
     }
 }

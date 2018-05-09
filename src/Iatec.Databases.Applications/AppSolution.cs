@@ -7,13 +7,13 @@ namespace Iatec.Databases.Applications
     {
         public AppSolution()
         {
-            AppDomain = new HashSet<AppDomain>();
+            AppDomains = new HashSet<AppDomain>();
         }
 
         public Guid AppSolutionId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ICollection<AppDomain> AppDomain { get; set; }
+        public ICollection<AppDomain> AppDomains { get; set; }
     }
 }

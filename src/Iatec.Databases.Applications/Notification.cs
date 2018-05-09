@@ -7,7 +7,7 @@ namespace Iatec.Databases.Applications
     {
         public Notification()
         {
-            NotificationUser = new HashSet<NotificationUser>();
+            NotificationUsers = new HashSet<NotificationUser>();
         }
 
         public Guid NotificationId { get; set; }
@@ -33,6 +33,6 @@ namespace Iatec.Databases.Applications
         public AppDomain AppDomain { get; set; }
         public Infrastructure Infrastructure { get; set; }
         public Region Region { get; set; }
-        public ICollection<NotificationUser> NotificationUser { get; set; }
+        public ICollection<NotificationUser> NotificationUsers { get; set; }
     }
 }

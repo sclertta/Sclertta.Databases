@@ -7,9 +7,9 @@ namespace Iatec.Databases.Applications
     {
         public Region()
         {
-            AppDeploy = new HashSet<AppDeploy>();
-            Notification = new HashSet<Notification>();
-            PackageRelease = new HashSet<PackageRelease>();
+            AppDeploys = new HashSet<AppDeploy>();
+            Notifications = new HashSet<Notification>();
+            PackageReleases = new HashSet<PackageRelease>();
             RegionalSettings = new HashSet<RegionalSettings>();
         }
 
@@ -21,9 +21,9 @@ namespace Iatec.Databases.Applications
         public double? Longitude { get; set; }
         public string TimeZone { get; set; }
 
-        public ICollection<AppDeploy> AppDeploy { get; set; }
-        public ICollection<Notification> Notification { get; set; }
-        public ICollection<PackageRelease> PackageRelease { get; set; }
+        public ICollection<AppDeploy> AppDeploys { get; set; }
+        public ICollection<Notification> Notifications { get; set; }
+        public ICollection<PackageRelease> PackageReleases { get; set; }
         public ICollection<RegionalSettings> RegionalSettings { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Iatec.Databases.Applications
     {
         public ImageStorage()
         {
-            AppDeploy = new HashSet<AppDeploy>();
+            AppDeploys = new HashSet<AppDeploy>();
             AppDomainLargeImage = new HashSet<AppDomain>();
             AppDomainMediumImage = new HashSet<AppDomain>();
             AppDomainSmallImage = new HashSet<AppDomain>();
@@ -21,7 +21,7 @@ namespace Iatec.Databases.Applications
         public string CreatedBy { get; set; }
         public byte[] Content { get; set; }
 
-        public ICollection<AppDeploy> AppDeploy { get; set; }
+        public ICollection<AppDeploy> AppDeploys { get; set; }
         public ICollection<AppDomain> AppDomainLargeImage { get; set; }
         public ICollection<AppDomain> AppDomainMediumImage { get; set; }
         public ICollection<AppDomain> AppDomainSmallImage { get; set; }

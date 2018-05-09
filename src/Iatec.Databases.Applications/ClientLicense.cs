@@ -7,7 +7,7 @@ namespace Iatec.Databases.Applications
     {
         public ClientLicense()
         {
-            AppDeploy = new HashSet<AppDeploy>();
+            AppDeploys = new HashSet<AppDeploy>();
         }
 
         public Guid ClientLicenseId { get; set; }
@@ -27,6 +27,6 @@ namespace Iatec.Databases.Applications
         public AppDomain AppDomain { get; set; }
         public Client Client { get; set; }
         public Organization Organization { get; set; }
-        public ICollection<AppDeploy> AppDeploy { get; set; }
+        public ICollection<AppDeploy> AppDeploys { get; set; }
     }
 }

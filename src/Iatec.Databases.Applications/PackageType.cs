@@ -7,7 +7,7 @@ namespace Iatec.Databases.Applications
     {
         public PackageType()
         {
-            Package = new HashSet<Package>();
+            Packages = new HashSet<Package>();
         }
 
         public Guid PackageTypeId { get; set; }
@@ -16,6 +16,6 @@ namespace Iatec.Databases.Applications
         public int? PackageTypeImportanceEnum { get; set; }
         public int? BackupTypeEnum { get; set; }
 
-        public ICollection<Package> Package { get; set; }
+        public ICollection<Package> Packages { get; set; }
     }
 }

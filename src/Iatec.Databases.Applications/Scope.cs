@@ -8,7 +8,7 @@ namespace Iatec.Databases.Applications
         public Scope()
         {
             AllowedScope = new HashSet<AllowedScope>();
-            ScopeSecret = new HashSet<ScopeSecret>();
+            ScopeSecrets = new HashSet<ScopeSecret>();
         }
 
         public string Name { get; set; }
@@ -18,6 +18,6 @@ namespace Iatec.Databases.Applications
         public string Title { get; set; }
 
         public ICollection<AllowedScope> AllowedScope { get; set; }
-        public ICollection<ScopeSecret> ScopeSecret { get; set; }
+        public ICollection<ScopeSecret> ScopeSecrets { get; set; }
     }
 }

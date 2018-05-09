@@ -7,7 +7,7 @@ namespace Iatec.Databases.Applications
     {
         public InfraOwner()
         {
-            Infrastructure = new HashSet<Infrastructure>();
+            Infrastructures = new HashSet<Infrastructure>();
         }
 
         public Guid InfraOwnerId { get; set; }
@@ -15,6 +15,6 @@ namespace Iatec.Databases.Applications
         public string EmailContact { get; set; }
         public string Description { get; set; }
 
-        public ICollection<Infrastructure> Infrastructure { get; set; }
+        public ICollection<Infrastructure> Infrastructures { get; set; }
     }
 }

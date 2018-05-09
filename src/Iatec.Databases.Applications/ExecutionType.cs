@@ -7,7 +7,7 @@ namespace Iatec.Databases.Applications
     {
         public ExecutionType()
         {
-            FileContent = new HashSet<FileContent>();
+            FileContents = new HashSet<FileContent>();
         }
 
         public Guid ExecutionTypeId { get; set; }
@@ -17,6 +17,6 @@ namespace Iatec.Databases.Applications
         public string Icon { get; set; }
         public bool IsDefault { get; set; }
 
-        public ICollection<FileContent> FileContent { get; set; }
+        public ICollection<FileContent> FileContents { get; set; }
     }
 }

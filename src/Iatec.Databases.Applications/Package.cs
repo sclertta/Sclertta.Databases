@@ -7,11 +7,11 @@ namespace Iatec.Databases.Applications
     {
         public Package()
         {
-            FileContent = new HashSet<FileContent>();
+            FileContents = new HashSet<FileContent>();
             InstallationHistory = new HashSet<InstallationHistory>();
-            PackageLinkPackage = new HashSet<PackageLink>();
-            PackageLinkPackageLinked = new HashSet<PackageLink>();
-            PackageRelease = new HashSet<PackageRelease>();
+            Packages = new HashSet<PackageLink>();
+            LinkedPackages = new HashSet<PackageLink>();
+            PackageReleases = new HashSet<PackageRelease>();
         }
 
         public Guid PackageId { get; set; }
@@ -35,10 +35,10 @@ namespace Iatec.Databases.Applications
 
         public AppDomain AppDomain { get; set; }
         public PackageType PackageType { get; set; }
-        public ICollection<FileContent> FileContent { get; set; }
+        public ICollection<FileContent> FileContents { get; set; }
         public ICollection<InstallationHistory> InstallationHistory { get; set; }
-        public ICollection<PackageLink> PackageLinkPackage { get; set; }
-        public ICollection<PackageLink> PackageLinkPackageLinked { get; set; }
-        public ICollection<PackageRelease> PackageRelease { get; set; }
+        public ICollection<PackageLink> Packages { get; set; }
+        public ICollection<PackageLink> LinkedPackages { get; set; }
+        public ICollection<PackageRelease> PackageReleases { get; set; }
     }
 }

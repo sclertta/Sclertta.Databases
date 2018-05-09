@@ -55,7 +55,7 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.AllowedScope)
+                    .WithMany(p => p.AllowedScopes)
                     .HasForeignKey(d => d.AppDeployId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__AllowedSc__AppDe__1F63A897");
@@ -101,12 +101,12 @@ namespace Iatec.Databases
                 entity.Property(e => e.SkipRoutesNumForHelp).HasDefaultValueSql("((0))");
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.AppDeploy)
+                    .WithMany(p => p.AppDeploys)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("R_5");
 
                 entity.HasOne(d => d.ClientLicense)
-                    .WithMany(p => p.AppDeploy)
+                    .WithMany(p => p.AppDeploys)
                     .HasForeignKey(d => d.ClientLicenseId)
                     .HasConstraintName("FK_client_license");
 
@@ -116,12 +116,12 @@ namespace Iatec.Databases
                     .HasConstraintName("R_10");
 
                 entity.HasOne(d => d.LogoImage)
-                    .WithMany(p => p.AppDeploy)
+                    .WithMany(p => p.AppDeploys)
                     .HasForeignKey(d => d.LogoImageId)
                     .HasConstraintName("R_6");
 
                 entity.HasOne(d => d.Region)
-                    .WithMany(p => p.AppDeploy)
+                    .WithMany(p => p.AppDeploys)
                     .HasForeignKey(d => d.RegionId)
                     .HasConstraintName("R_11");
             });
@@ -160,13 +160,13 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.AppDeployHelp)
+                    .WithMany(p => p.AppDeployHelps)
                     .HasForeignKey(d => d.AppDeployId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_AppDeployHelp_AppDeploy");
 
                 entity.HasOne(d => d.ParentAppDeployHelp)
-                    .WithMany(p => p.InverseParentAppDeployHelp)
+                    .WithMany(p => p.InverseParentAppDeployHelps)
                     .HasForeignKey(d => d.ParentAppDeployHelpId)
                     .HasConstraintName("FK_AppDeployHelp_AppDeployHelp");
             });
@@ -188,7 +188,7 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeployHelp)
-                    .WithMany(p => p.AppDeployHelpContent)
+                    .WithMany(p => p.AppDeployHelpContents)
                     .HasForeignKey(d => d.AppDeployHelpId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_AppDeployHelpContent_AppDeployHelp");
@@ -215,7 +215,7 @@ namespace Iatec.Databases
                     .HasColumnType("binary(32)");
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.AppDeploySecret)
+                    .WithMany(p => p.AppDeploySecrets)
                     .HasForeignKey(d => d.AppDeployId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__AppDeploy__AppDe__3A179ED3");
@@ -263,7 +263,7 @@ namespace Iatec.Databases
                     .HasConstraintName("R_4");
 
                 entity.HasOne(d => d.AppSolution)
-                    .WithMany(p => p.AppDomain)
+                    .WithMany(p => p.AppDomains)
                     .HasForeignKey(d => d.AppSolutionId)
                     .HasConstraintName("FK_AppDomain_Solution");
 
@@ -290,7 +290,7 @@ namespace Iatec.Databases
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.AppHub)
+                    .WithMany(p => p.AppHubs)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("FK__AppHub__AppDomai__0D7A0286");
             });
@@ -385,7 +385,7 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.ClientLicense)
+                    .WithMany(p => p.ClientLicenses)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("R_8");
 
@@ -422,12 +422,12 @@ namespace Iatec.Databases
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.ExecutionType)
-                    .WithMany(p => p.FileContent)
+                    .WithMany(p => p.FileContents)
                     .HasForeignKey(d => d.ExecutionTypeId)
                     .HasConstraintName("FK__FileConte__Execu__2739D489");
 
                 entity.HasOne(d => d.Package)
-                    .WithMany(p => p.FileContent)
+                    .WithMany(p => p.FileContents)
                     .HasForeignKey(d => d.PackageId)
                     .HasConstraintName("FK__FileConte__Packa__282DF8C2");
             });
@@ -487,7 +487,7 @@ namespace Iatec.Databases
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.InfraOwner)
-                    .WithMany(p => p.Infrastructure)
+                    .WithMany(p => p.Infrastructures)
                     .HasForeignKey(d => d.InfraOwnerId)
                     .HasConstraintName("R_9");
             });
@@ -550,22 +550,22 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.Notification)
+                    .WithMany(p => p.Notifications)
                     .HasForeignKey(d => d.AppDeployId)
                     .HasConstraintName("FK_Notification_AppDeploy");
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.Notification)
+                    .WithMany(p => p.Notifications)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("FK_Notification_AppDomain");
 
                 entity.HasOne(d => d.Infrastructure)
-                    .WithMany(p => p.Notification)
+                    .WithMany(p => p.Notifications)
                     .HasForeignKey(d => d.InfrastructureId)
                     .HasConstraintName("FK_Notification_Infrastructure");
 
                 entity.HasOne(d => d.Region)
-                    .WithMany(p => p.Notification)
+                    .WithMany(p => p.Notifications)
                     .HasForeignKey(d => d.RegionId)
                     .HasConstraintName("FK_Notification_Region");
             });
@@ -579,7 +579,7 @@ namespace Iatec.Databases
                 entity.Property(e => e.UserName).HasMaxLength(150);
 
                 entity.HasOne(d => d.Notification)
-                    .WithMany(p => p.NotificationUser)
+                    .WithMany(p => p.NotificationUsers)
                     .HasForeignKey(d => d.NotificationId)
                     .HasConstraintName("FK_NotificationUser_Notification");
             });
@@ -606,13 +606,13 @@ namespace Iatec.Databases
                 entity.Property(e => e.OrgResponsibleId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Client)
-                    .WithMany(p => p.OrgResponsible)
+                    .WithMany(p => p.OrgResponsibles)
                     .HasForeignKey(d => d.ClientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrgRespon__Clien__40F9A68C");
 
                 entity.HasOne(d => d.Organization)
-                    .WithMany(p => p.OrgResponsible)
+                    .WithMany(p => p.OrgResponsibles)
                     .HasForeignKey(d => d.OrganizationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrgRespon__Organ__40058253");
@@ -644,12 +644,12 @@ namespace Iatec.Databases
                 entity.Property(e => e.Title).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.Package)
+                    .WithMany(p => p.Packages)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("FK__Package__AppDoma__19DFD96B");
 
                 entity.HasOne(d => d.PackageType)
-                    .WithMany(p => p.Package)
+                    .WithMany(p => p.Packages)
                     .HasForeignKey(d => d.PackageTypeId)
                     .HasConstraintName("FK__Package__Package__1AD3FDA4");
             });
@@ -659,13 +659,13 @@ namespace Iatec.Databases
                 entity.Property(e => e.PackageLinkId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Package)
-                    .WithMany(p => p.PackageLinkPackage)
+                    .WithMany(p => p.Packages)
                     .HasForeignKey(d => d.PackageId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PackageLi__Packa__2DE6D218");
 
                 entity.HasOne(d => d.PackageLinked)
-                    .WithMany(p => p.PackageLinkPackageLinked)
+                    .WithMany(p => p.LinkedPackages)
                     .HasForeignKey(d => d.PackageLinkedId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PackageLi__Packa__2CF2ADDF");
@@ -682,22 +682,22 @@ namespace Iatec.Databases
                 entity.Property(e => e.ReleasedBy).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.PackageRelease)
+                    .WithMany(p => p.PackageReleases)
                     .HasForeignKey(d => d.AppDeployId)
                     .HasConstraintName("FK__PackageRe__AppDe__3587F3E0");
 
                 entity.HasOne(d => d.Client)
-                    .WithMany(p => p.PackageRelease)
+                    .WithMany(p => p.PackageReleases)
                     .HasForeignKey(d => d.ClientId)
                     .HasConstraintName("FK__PackageRe__Clien__339FAB6E");
 
                 entity.HasOne(d => d.Package)
-                    .WithMany(p => p.PackageRelease)
+                    .WithMany(p => p.PackageReleases)
                     .HasForeignKey(d => d.PackageId)
                     .HasConstraintName("FK__PackageRe__Packa__32AB8735");
 
                 entity.HasOne(d => d.Region)
-                    .WithMany(p => p.PackageRelease)
+                    .WithMany(p => p.PackageReleases)
                     .HasForeignKey(d => d.RegionId)
                     .HasConstraintName("FK__PackageRe__Regio__3493CFA7");
             });
@@ -798,7 +798,7 @@ namespace Iatec.Databases
                     .HasColumnType("binary(32)");
 
                 entity.HasOne(d => d.Scope)
-                    .WithMany(p => p.ScopeSecret)
+                    .WithMany(p => p.ScopeSecrets)
                     .HasForeignKey(d => d.ScopeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Scope_Id");

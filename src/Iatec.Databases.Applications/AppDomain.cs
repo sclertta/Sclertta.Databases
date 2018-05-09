@@ -7,12 +7,12 @@ namespace Iatec.Databases.Applications
     {
         public AppDomain()
         {
-            AppDeploy = new HashSet<AppDeploy>();
-            AppHub = new HashSet<AppHub>();
+            AppDeploys = new HashSet<AppDeploy>();
+            AppHubs = new HashSet<AppHub>();
             AppTermsOfUse = new HashSet<AppTermsOfUse>();
-            ClientLicense = new HashSet<ClientLicense>();
-            Notification = new HashSet<Notification>();
-            Package = new HashSet<Package>();
+            ClientLicenses = new HashSet<ClientLicense>();
+            Notifications = new HashSet<Notification>();
+            Packages = new HashSet<Package>();
             RegionalSettings = new HashSet<RegionalSettings>();
         }
 
@@ -48,12 +48,12 @@ namespace Iatec.Databases.Applications
         public ImageStorage LargeImage { get; set; }
         public ImageStorage MediumImage { get; set; }
         public ImageStorage SmallImage { get; set; }
-        public ICollection<AppDeploy> AppDeploy { get; set; }
-        public ICollection<AppHub> AppHub { get; set; }
+        public ICollection<AppDeploy> AppDeploys { get; set; }
+        public ICollection<AppHub> AppHubs { get; set; }
         public ICollection<AppTermsOfUse> AppTermsOfUse { get; set; }
-        public ICollection<ClientLicense> ClientLicense { get; set; }
-        public ICollection<Notification> Notification { get; set; }
-        public ICollection<Package> Package { get; set; }
+        public ICollection<ClientLicense> ClientLicenses { get; set; }
+        public ICollection<Notification> Notifications { get; set; }
+        public ICollection<Package> Packages { get; set; }
         public ICollection<RegionalSettings> RegionalSettings { get; set; }
     }
 }
