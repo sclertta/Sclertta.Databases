@@ -47,6 +47,7 @@ namespace Iatec.Databases
         {
             modelBuilder.Entity<AllowedScope>(entity =>
             {
+                entity.ToTable("AllowedScope");
                 entity.Property(e => e.ScopeId).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.ScopeOldId)
@@ -69,6 +70,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppCategory>(entity =>
             {
+                entity.ToTable("AppCategory");
                 entity.Property(e => e.AppCategoryId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(255);
@@ -78,6 +80,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppDeploy>(entity =>
             {
+                entity.ToTable("AppDeploy");
                 entity.Property(e => e.AppDeployId).ValueGeneratedNever();
 
                 entity.Property(e => e.ActivationDate).HasColumnType("datetime");
@@ -128,6 +131,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppDeployHelp>(entity =>
             {
+                entity.ToTable("AppDeployHelp");
                 entity.Property(e => e.AppDeployHelpId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy)
@@ -173,6 +177,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppDeployHelpContent>(entity =>
             {
+                entity.ToTable("AppDeployHelpContent");
                 entity.Property(e => e.AppDeployHelpContentId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreationDate).HasColumnType("datetime");
@@ -196,6 +201,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppDeploySecret>(entity =>
             {
+                entity.ToTable("AppDeploySecret");
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
                     .HasMaxLength(100)
@@ -223,6 +229,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Applications.AppDomain>(entity =>
             {
+                entity.ToTable("AppDomain");
                 entity.Property(e => e.AppDomainId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy)
@@ -285,6 +292,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppHub>(entity =>
             {
+                entity.ToTable("AppHub");
                 entity.Property(e => e.AppHubId).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasMaxLength(100);
@@ -297,6 +305,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppSolution>(entity =>
             {
+                entity.ToTable("AppSolution");
                 entity.Property(e => e.AppSolutionId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
@@ -311,6 +320,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppTermsOfUse>(entity =>
             {
+                entity.ToTable("AppTermsOfUse");
                 entity.Property(e => e.AppTermsOfUseId).ValueGeneratedNever();
 
                 entity.Property(e => e.Content)
@@ -355,6 +365,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Client>(entity =>
             {
+                entity.ToTable("Client");
                 entity.Property(e => e.ClientId).ValueGeneratedNever();
 
                 entity.Property(e => e.ContactEmail).HasMaxLength(100);
@@ -368,6 +379,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<ClientLicense>(entity =>
             {
+                entity.ToTable("ClientLicense");
                 entity.Property(e => e.ClientLicenseId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy).HasMaxLength(50);
@@ -402,6 +414,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<ExecutionType>(entity =>
             {
+                entity.ToTable("ExecutionType");
                 entity.Property(e => e.ExecutionTypeId).ValueGeneratedNever();
 
                 entity.Property(e => e.FileExtension).HasMaxLength(50);
@@ -417,6 +430,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<FileContent>(entity =>
             {
+                entity.ToTable("FileContent");
                 entity.Property(e => e.FileContentId).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasMaxLength(100);
@@ -434,6 +448,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<ImageStorage>(entity =>
             {
+                entity.ToTable("ImageStorage");
                 entity.Property(e => e.ImageStorageId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy)
@@ -453,6 +468,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<InfraOwner>(entity =>
             {
+                entity.ToTable("InfraOwner");
                 entity.Property(e => e.InfraOwnerId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(255);
@@ -468,6 +484,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Infrastructure>(entity =>
             {
+                entity.ToTable("Infrastructure");
                 entity.Property(e => e.InfrastructureId).ValueGeneratedNever();
 
                 entity.Property(e => e.BillingSupportPhone)
@@ -494,6 +511,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<InstallationHistory>(entity =>
             {
+                entity.ToTable("InstallationHistory");
                 entity.Property(e => e.InstallationHistoryId).ValueGeneratedNever();
 
                 entity.Property(e => e.InstallationDate).HasColumnType("datetime");
@@ -513,6 +531,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Notification>(entity =>
             {
+                entity.ToTable("Notification");
                 entity.Property(e => e.NotificationId).ValueGeneratedNever();
 
                 entity.Property(e => e.BeginDateTime).HasColumnType("datetime");
@@ -572,6 +591,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<NotificationUser>(entity =>
             {
+                entity.ToTable("NotificationUser");
                 entity.Property(e => e.NotificationUserId).ValueGeneratedNever();
 
                 entity.Property(e => e.ReadedOnDateTime).HasColumnType("datetime");
@@ -586,6 +606,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Organization>(entity =>
             {
+                entity.ToTable("Organization");
                 entity.Property(e => e.OrganizationId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
@@ -603,6 +624,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<OrgResponsible>(entity =>
             {
+                entity.ToTable("OrgResponsible");
                 entity.Property(e => e.OrgResponsibleId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Client)
@@ -620,6 +642,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Package>(entity =>
             {
+                entity.ToTable("Package");
                 entity.Property(e => e.PackageId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy).HasMaxLength(100);
@@ -656,6 +679,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<PackageLink>(entity =>
             {
+                entity.ToTable("PackageLink");
                 entity.Property(e => e.PackageLinkId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Package)
@@ -673,6 +697,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<PackageRelease>(entity =>
             {
+                entity.ToTable("PackageRelease");
                 entity.Property(e => e.PackageReleaseId).ValueGeneratedNever();
 
                 entity.Property(e => e.ReleaseDate).HasColumnType("datetime");
@@ -704,6 +729,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<PackageType>(entity =>
             {
+                entity.ToTable("PackageType");
                 entity.Property(e => e.PackageTypeId).ValueGeneratedNever();
 
                 entity.Property(e => e.Code).HasMaxLength(100);
@@ -713,6 +739,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Region>(entity =>
             {
+                entity.ToTable("Region");
                 entity.Property(e => e.RegionId).ValueGeneratedNever();
 
                 entity.Property(e => e.CultureCode)
@@ -728,6 +755,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<RegionalSettings>(entity =>
             {
+                entity.ToTable("RegionalSettings");
                 entity.Property(e => e.RegionalSettingsId).ValueGeneratedNever();
 
                 entity.Property(e => e.SupportEmail).HasMaxLength(50);
@@ -749,6 +777,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Scope>(entity =>
             {
+                entity.ToTable("Scope");
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(1024)
@@ -772,6 +801,7 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<ScopeSecret>(entity =>
             {
+                entity.ToTable("ScopeSecret");
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
                     .HasMaxLength(100)
