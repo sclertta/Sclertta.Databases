@@ -4,6 +4,7 @@
     "Applications",
 	"Aps",
     "Gan",
+	"PeopleMgmt",
     "SessionStorage"
 )
 

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.SessionStor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Aps", "Iatec.Databases.Aps\Iatec.Databases.Aps.csproj", "{3B85DC33-6209-4CCF-8A11-704440A5CD20}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.PeopleMgmt", "Iatec.Databases.PeopleMgmt\Iatec.Databases.PeopleMgmt.csproj", "{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B85DC33-6209-4CCF-8A11-704440A5CD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
