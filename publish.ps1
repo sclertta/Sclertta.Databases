@@ -1,11 +1,13 @@
-[string[]] $projects = @(
-    "AccessControl",
-    "Accounts",
-    "Applications",
-	"Aps",
-    "Gan",
-	"PeopleMgmt",
-    "SessionStorage"
+param(
+	[string[]] $projects = @(
+		"AccessControl",
+		"Accounts",
+		"Applications",
+		"Aps",	
+		"Gan",
+		"PeopleMgmt",
+		"SessionStorage"
+	)
 )
 
 foreach ($project in $projects) {
