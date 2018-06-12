@@ -1,8 +1,9 @@
 ﻿using System;
+using Iatec.Databases.Applications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Iatec.Databases.Applications
+namespace Iatec.Databases
 {
     public partial class ApplicationsDbContext : DbContext
     {
@@ -22,7 +23,7 @@ namespace Iatec.Databases.Applications
         public virtual DbSet<AppDeployHelp> AppDeployHelp { get; set; }
         public virtual DbSet<AppDeployHelpContent> AppDeployHelpContent { get; set; }
         public virtual DbSet<AppDeploySecret> AppDeploySecret { get; set; }
-        public virtual DbSet<AppDomain> AppDomain { get; set; }
+        public virtual DbSet<Applications.AppDomain> AppDomain { get; set; }
         public virtual DbSet<AppHub> AppHub { get; set; }
         public virtual DbSet<AppSolution> AppSolution { get; set; }
         public virtual DbSet<AppTermsOfUse> AppTermsOfUse { get; set; }
@@ -250,7 +251,7 @@ namespace Iatec.Databases.Applications
                     .HasConstraintName("FK__AppDeploy__AppDe__3A179ED3");
             });
 
-            modelBuilder.Entity<AppDomain>(entity =>
+            modelBuilder.Entity<Applications.AppDomain>(entity =>
             {
                 entity.Property(e => e.AppDomainId).ValueGeneratedNever();
 
