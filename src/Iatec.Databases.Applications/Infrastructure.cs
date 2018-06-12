@@ -8,7 +8,7 @@ namespace Iatec.Databases.Applications
         public Infrastructure()
         {
             AppDeploy = new HashSet<AppDeploy>();
-            Notifications = new HashSet<Notification>();
+            Notification = new HashSet<Notification>();
         }
 
         public Guid InfrastructureId { get; set; }
@@ -21,6 +21,6 @@ namespace Iatec.Databases.Applications
 
         public InfraOwner InfraOwner { get; set; }
         public ICollection<AppDeploy> AppDeploy { get; set; }
-        public ICollection<Notification> Notifications { get; set; }
+        public ICollection<Notification> Notification { get; set; }
     }
 }

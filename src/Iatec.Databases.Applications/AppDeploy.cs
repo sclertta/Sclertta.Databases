@@ -7,11 +7,12 @@ namespace Iatec.Databases.Applications
     {
         public AppDeploy()
         {
-            AllowedScopes = new HashSet<AllowedScope>();
-            AppDeployHelps = new HashSet<AppDeployHelp>();
-            AppDeploySecrets = new HashSet<AppDeploySecret>();
-            Notifications = new HashSet<Notification>();
-            PackageReleases = new HashSet<PackageRelease>();
+            AllowedScope = new HashSet<AllowedScope>();
+            AppDeployAccessing = new HashSet<AppDeployAccessing>();
+            AppDeployHelp = new HashSet<AppDeployHelp>();
+            AppDeploySecret = new HashSet<AppDeploySecret>();
+            Notification = new HashSet<Notification>();
+            PackageRelease = new HashSet<PackageRelease>();
         }
 
         public Guid AppDeployId { get; set; }
@@ -41,10 +42,11 @@ namespace Iatec.Databases.Applications
         public Infrastructure Infrastructure { get; set; }
         public ImageStorage LogoImage { get; set; }
         public Region Region { get; set; }
-        public ICollection<AllowedScope> AllowedScopes { get; set; }
-        public ICollection<AppDeployHelp> AppDeployHelps { get; set; }
-        public ICollection<AppDeploySecret> AppDeploySecrets { get; set; }
-        public ICollection<Notification> Notifications { get; set; }
-        public ICollection<PackageRelease> PackageReleases { get; set; }
+        public ICollection<AllowedScope> AllowedScope { get; set; }
+        public ICollection<AppDeployAccessing> AppDeployAccessing { get; set; }
+        public ICollection<AppDeployHelp> AppDeployHelp { get; set; }
+        public ICollection<AppDeploySecret> AppDeploySecret { get; set; }
+        public ICollection<Notification> Notification { get; set; }
+        public ICollection<PackageRelease> PackageRelease { get; set; }
     }
 }

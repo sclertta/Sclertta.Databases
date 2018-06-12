@@ -8,7 +8,7 @@ namespace Iatec.Databases.Applications
         public Organization()
         {
             ClientLicense = new HashSet<ClientLicense>();
-            OrgResponsibles = new HashSet<OrgResponsible>();
+            OrgResponsible = new HashSet<OrgResponsible>();
         }
 
         public Guid OrganizationId { get; set; }
@@ -17,6 +17,6 @@ namespace Iatec.Databases.Applications
         public string Name { get; set; }
 
         public ICollection<ClientLicense> ClientLicense { get; set; }
-        public ICollection<OrgResponsible> OrgResponsibles { get; set; }
+        public ICollection<OrgResponsible> OrgResponsible { get; set; }
     }
 }

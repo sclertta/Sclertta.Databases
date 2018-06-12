@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.Aps", "Iate
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iatec.Databases.PeopleMgmt", "Iatec.Databases.PeopleMgmt\Iatec.Databases.PeopleMgmt.csproj", "{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{FC7F4D0C-68B8-438F-8337-EEDA3AEC683D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7F4D0C-68B8-438F-8337-EEDA3AEC683D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7F4D0C-68B8-438F-8337-EEDA3AEC683D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7F4D0C-68B8-438F-8337-EEDA3AEC683D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7F4D0C-68B8-438F-8337-EEDA3AEC683D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

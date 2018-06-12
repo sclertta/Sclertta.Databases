@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Server=172.16.19.162\SQL2016;User Id=iatec.el.dev;Password=&l2016i@tec;Database=el_applications;Application Name=ef-generator" "Microsoft.EntityFrameworkCore.SqlServer" --context ApplicationsDbContext --output-dir "..\Iatec.Databases.Applications"

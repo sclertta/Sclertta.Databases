@@ -1,62 +1,63 @@
 ﻿using System;
-using Iatec.Databases.Applications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Iatec.Databases
+namespace Iatec.Databases.Applications
 {
     public partial class ApplicationsDbContext : DbContext
     {
-        public virtual DbSet<AllowedScope> AllowedScopes { get; set; }
-        public virtual DbSet<AppCategory> AppCategories { get; set; }
-        public virtual DbSet<AppDeploy> AppDeploys { get; set; }
-        public virtual DbSet<AppDeployHelp> AppDeployHelps { get; set; }
-        public virtual DbSet<AppDeployHelpContent> AppDeployHelpContents { get; set; }
-        public virtual DbSet<AppDeploySecret> AppDeploySecrets { get; set; }
-        public virtual DbSet<Applications.AppDomain> AppDomains { get; set; }
-        public virtual DbSet<AppHub> AppHubs { get; set; }
-        public virtual DbSet<AppSolution> AppSolutions { get; set; }
-        public virtual DbSet<AppTermsOfUse> AppTermsOfUses { get; set; }
-        public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<ClientLicense> ClientLicenses { get; set; }
-        public virtual DbSet<ExecutionType> ExecutionTypes { get; set; }
-        public virtual DbSet<FileContent> FileContents { get; set; }
-        public virtual DbSet<ImageStorage> ImageStorages { get; set; }
-        public virtual DbSet<InfraOwner> InfraOwners { get; set; }
-        public virtual DbSet<Infrastructure> Infrastructures { get; set; }
-        public virtual DbSet<InstallationHistory> InstallationHistories { get; set; }
-        public virtual DbSet<Notification> Notifications { get; set; }
-        public virtual DbSet<NotificationUser> NotificationUsers { get; set; }
-        public virtual DbSet<Organization> Organizations { get; set; }
-        public virtual DbSet<OrgResponsible> OrgResponsibles { get; set; }
-        public virtual DbSet<Package> Packages { get; set; }
-        public virtual DbSet<PackageLink> PackageLinks { get; set; }
-        public virtual DbSet<PackageRelease> PackageReleases { get; set; }
-        public virtual DbSet<PackageType> PackageTypes { get; set; }
-        public virtual DbSet<Region> Regions { get; set; }
-        public virtual DbSet<RegionalSettings> RegionalSettings { get; set; }
-        public virtual DbSet<Scope> Scopes { get; set; }
-        public virtual DbSet<ScopeSecret> ScopeSecrets { get; set; }
-
-        public ApplicationsDbContext(DbContextOptions<ApplicationsDbContext> options) : base(options)
+        public ApplicationsDbContext()
         {
-
         }
+
+        public ApplicationsDbContext(DbContextOptions<ApplicationsDbContext> options)
+            : base(options)
+        {
+        }
+
+        public virtual DbSet<AllowedScope> AllowedScope { get; set; }
+        public virtual DbSet<AppCategory> AppCategory { get; set; }
+        public virtual DbSet<AppDeploy> AppDeploy { get; set; }
+        public virtual DbSet<AppDeployAccessing> AppDeployAccessing { get; set; }
+        public virtual DbSet<AppDeployHelp> AppDeployHelp { get; set; }
+        public virtual DbSet<AppDeployHelpContent> AppDeployHelpContent { get; set; }
+        public virtual DbSet<AppDeploySecret> AppDeploySecret { get; set; }
+        public virtual DbSet<AppDomain> AppDomain { get; set; }
+        public virtual DbSet<AppHub> AppHub { get; set; }
+        public virtual DbSet<AppSolution> AppSolution { get; set; }
+        public virtual DbSet<AppTermsOfUse> AppTermsOfUse { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<ClientLicense> ClientLicense { get; set; }
+        public virtual DbSet<ExecutionType> ExecutionType { get; set; }
+        public virtual DbSet<FileContent> FileContent { get; set; }
+        public virtual DbSet<ImageStorage> ImageStorage { get; set; }
+        public virtual DbSet<InfraOwner> InfraOwner { get; set; }
+        public virtual DbSet<Infrastructure> Infrastructure { get; set; }
+        public virtual DbSet<InstallationHistory> InstallationHistory { get; set; }
+        public virtual DbSet<Notification> Notification { get; set; }
+        public virtual DbSet<NotificationUser> NotificationUser { get; set; }
+        public virtual DbSet<Organization> Organization { get; set; }
+        public virtual DbSet<OrgResponsible> OrgResponsible { get; set; }
+        public virtual DbSet<Package> Package { get; set; }
+        public virtual DbSet<PackageLink> PackageLink { get; set; }
+        public virtual DbSet<PackageRelease> PackageRelease { get; set; }
+        public virtual DbSet<PackageType> PackageType { get; set; }
+        public virtual DbSet<Region> Region { get; set; }
+        public virtual DbSet<RegionalSettings> RegionalSettings { get; set; }
+        public virtual DbSet<Scope> Scope { get; set; }
+        public virtual DbSet<ScopeSecret> ScopeSecret { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AllowedScope>(entity =>
             {
-                entity.ToTable("AllowedScope");
-                entity.Property(e => e.ScopeId).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ScopeOldId)
                     .HasColumnName("Scope_old_id")
                     .HasMaxLength(32)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.AllowedScopes)
+                    .WithMany(p => p.AllowedScope)
                     .HasForeignKey(d => d.AppDeployId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__AllowedSc__AppDe__1F63A897");
@@ -70,7 +71,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppCategory>(entity =>
             {
-                entity.ToTable("AppCategory");
                 entity.Property(e => e.AppCategoryId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(255);
@@ -80,7 +80,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppDeploy>(entity =>
             {
-                entity.ToTable("AppDeploy");
                 entity.Property(e => e.AppDeployId).ValueGeneratedNever();
 
                 entity.Property(e => e.ActivationDate).HasColumnType("datetime");
@@ -99,17 +98,13 @@ namespace Iatec.Databases
 
                 entity.Property(e => e.MachineThumprint).HasMaxLength(255);
 
-                entity.Property(e => e.ShowInDashboard).HasDefaultValueSql("((0))");
-
-                entity.Property(e => e.SkipRoutesNumForHelp).HasDefaultValueSql("((0))");
-
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.AppDeploys)
+                    .WithMany(p => p.AppDeploy)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("R_5");
 
                 entity.HasOne(d => d.ClientLicense)
-                    .WithMany(p => p.AppDeploys)
+                    .WithMany(p => p.AppDeploy)
                     .HasForeignKey(d => d.ClientLicenseId)
                     .HasConstraintName("FK_client_license");
 
@@ -119,19 +114,49 @@ namespace Iatec.Databases
                     .HasConstraintName("R_10");
 
                 entity.HasOne(d => d.LogoImage)
-                    .WithMany(p => p.AppDeploys)
+                    .WithMany(p => p.AppDeploy)
                     .HasForeignKey(d => d.LogoImageId)
                     .HasConstraintName("R_6");
 
                 entity.HasOne(d => d.Region)
-                    .WithMany(p => p.AppDeploys)
+                    .WithMany(p => p.AppDeploy)
                     .HasForeignKey(d => d.RegionId)
                     .HasConstraintName("R_11");
             });
 
+            modelBuilder.Entity<AppDeployAccessing>(entity =>
+            {
+                entity.Property(e => e.AppDeployAccessingId).ValueGeneratedNever();
+
+                entity.Property(e => e.Browser)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ByUsername)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DateAccessed).HasColumnType("datetime");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ip)
+                    .HasColumnName("IP")
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.AppDeploy)
+                    .WithMany(p => p.AppDeployAccessing)
+                    .HasForeignKey(d => d.AppDeployId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__AppDeploy__AppDe__54968AE5");
+            });
+
             modelBuilder.Entity<AppDeployHelp>(entity =>
             {
-                entity.ToTable("AppDeployHelp");
                 entity.Property(e => e.AppDeployHelpId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy)
@@ -164,20 +189,19 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.AppDeployHelps)
+                    .WithMany(p => p.AppDeployHelp)
                     .HasForeignKey(d => d.AppDeployId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_AppDeployHelp_AppDeploy");
 
                 entity.HasOne(d => d.ParentAppDeployHelp)
-                    .WithMany(p => p.InverseParentAppDeployHelps)
+                    .WithMany(p => p.InverseParentAppDeployHelp)
                     .HasForeignKey(d => d.ParentAppDeployHelpId)
                     .HasConstraintName("FK_AppDeployHelp_AppDeployHelp");
             });
 
             modelBuilder.Entity<AppDeployHelpContent>(entity =>
             {
-                entity.ToTable("AppDeployHelpContent");
                 entity.Property(e => e.AppDeployHelpContentId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreationDate).HasColumnType("datetime");
@@ -193,7 +217,7 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeployHelp)
-                    .WithMany(p => p.AppDeployHelpContents)
+                    .WithMany(p => p.AppDeployHelpContent)
                     .HasForeignKey(d => d.AppDeployHelpId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_AppDeployHelpContent_AppDeployHelp");
@@ -201,7 +225,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppDeploySecret>(entity =>
             {
-                entity.ToTable("AppDeploySecret");
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
                     .HasMaxLength(100)
@@ -218,18 +241,17 @@ namespace Iatec.Databases
 
                 entity.Property(e => e.SecretHash)
                     .IsRequired()
-                    .HasColumnType("binary(32)");
+                    .HasMaxLength(32);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.AppDeploySecrets)
+                    .WithMany(p => p.AppDeploySecret)
                     .HasForeignKey(d => d.AppDeployId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__AppDeploy__AppDe__3A179ED3");
             });
 
-            modelBuilder.Entity<Applications.AppDomain>(entity =>
+            modelBuilder.Entity<AppDomain>(entity =>
             {
-                entity.ToTable("AppDomain");
                 entity.Property(e => e.AppDomainId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy)
@@ -244,9 +266,9 @@ namespace Iatec.Databases
 
                 entity.Property(e => e.HelpUrl).HasMaxLength(200);
 
-                entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.IsAuthProvidersAllowed).HasDefaultValueSql("((0))");
 
-                entity.Property(e => e.OidcFlowEnum).HasDefaultValueSql("((0))");
+                entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.Property(e => e.RenewRelativeUrl).HasMaxLength(200);
 
@@ -265,12 +287,12 @@ namespace Iatec.Databases
                 entity.Property(e => e.UserSupportUrl).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppCategory)
-                    .WithMany(p => p.AppDomains)
+                    .WithMany(p => p.AppDomain)
                     .HasForeignKey(d => d.AppCategoryId)
                     .HasConstraintName("R_4");
 
                 entity.HasOne(d => d.AppSolution)
-                    .WithMany(p => p.AppDomains)
+                    .WithMany(p => p.AppDomain)
                     .HasForeignKey(d => d.AppSolutionId)
                     .HasConstraintName("FK_AppDomain_Solution");
 
@@ -292,20 +314,18 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppHub>(entity =>
             {
-                entity.ToTable("AppHub");
                 entity.Property(e => e.AppHubId).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.AppHubs)
+                    .WithMany(p => p.AppHub)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("FK__AppHub__AppDomai__0D7A0286");
             });
 
             modelBuilder.Entity<AppSolution>(entity =>
             {
-                entity.ToTable("AppSolution");
                 entity.Property(e => e.AppSolutionId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
@@ -320,7 +340,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<AppTermsOfUse>(entity =>
             {
-                entity.ToTable("AppTermsOfUse");
                 entity.Property(e => e.AppTermsOfUseId).ValueGeneratedNever();
 
                 entity.Property(e => e.Content)
@@ -338,8 +357,6 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.Property(e => e.LastUpdatedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.TermsContentTypeEnum).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Title)
                     .IsRequired()
@@ -365,7 +382,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Client>(entity =>
             {
-                entity.ToTable("Client");
                 entity.Property(e => e.ClientId).ValueGeneratedNever();
 
                 entity.Property(e => e.ContactEmail).HasMaxLength(100);
@@ -379,7 +395,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<ClientLicense>(entity =>
             {
-                entity.ToTable("ClientLicense");
                 entity.Property(e => e.ClientLicenseId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy).HasMaxLength(50);
@@ -397,7 +412,7 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.ClientLicenses)
+                    .WithMany(p => p.ClientLicense)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("R_8");
 
@@ -410,11 +425,10 @@ namespace Iatec.Databases
                     .WithMany(p => p.ClientLicense)
                     .HasForeignKey(d => d.OrganizationId)
                     .HasConstraintName("FK__ClientLic__Organ__3A4CA8FD");
-            });
+            });;
 
             modelBuilder.Entity<ExecutionType>(entity =>
             {
-                entity.ToTable("ExecutionType");
                 entity.Property(e => e.ExecutionTypeId).ValueGeneratedNever();
 
                 entity.Property(e => e.FileExtension).HasMaxLength(50);
@@ -430,25 +444,23 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<FileContent>(entity =>
             {
-                entity.ToTable("FileContent");
                 entity.Property(e => e.FileContentId).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.ExecutionType)
-                    .WithMany(p => p.FileContents)
+                    .WithMany(p => p.FileContent)
                     .HasForeignKey(d => d.ExecutionTypeId)
                     .HasConstraintName("FK__FileConte__Execu__2739D489");
 
                 entity.HasOne(d => d.Package)
-                    .WithMany(p => p.FileContents)
+                    .WithMany(p => p.FileContent)
                     .HasForeignKey(d => d.PackageId)
                     .HasConstraintName("FK__FileConte__Packa__282DF8C2");
             });
 
             modelBuilder.Entity<ImageStorage>(entity =>
             {
-                entity.ToTable("ImageStorage");
                 entity.Property(e => e.ImageStorageId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy)
@@ -468,7 +480,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<InfraOwner>(entity =>
             {
-                entity.ToTable("InfraOwner");
                 entity.Property(e => e.InfraOwnerId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(255);
@@ -484,7 +495,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Infrastructure>(entity =>
             {
-                entity.ToTable("Infrastructure");
                 entity.Property(e => e.InfrastructureId).ValueGeneratedNever();
 
                 entity.Property(e => e.BillingSupportPhone)
@@ -504,14 +514,13 @@ namespace Iatec.Databases
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.InfraOwner)
-                    .WithMany(p => p.Infrastructures)
+                    .WithMany(p => p.Infrastructure)
                     .HasForeignKey(d => d.InfraOwnerId)
                     .HasConstraintName("R_9");
             });
 
             modelBuilder.Entity<InstallationHistory>(entity =>
             {
-                entity.ToTable("InstallationHistory");
                 entity.Property(e => e.InstallationHistoryId).ValueGeneratedNever();
 
                 entity.Property(e => e.InstallationDate).HasColumnType("datetime");
@@ -531,7 +540,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Notification>(entity =>
             {
-                entity.ToTable("Notification");
                 entity.Property(e => e.NotificationId).ValueGeneratedNever();
 
                 entity.Property(e => e.BeginDateTime).HasColumnType("datetime");
@@ -569,29 +577,28 @@ namespace Iatec.Databases
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.Notifications)
+                    .WithMany(p => p.Notification)
                     .HasForeignKey(d => d.AppDeployId)
                     .HasConstraintName("FK_Notification_AppDeploy");
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.Notifications)
+                    .WithMany(p => p.Notification)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("FK_Notification_AppDomain");
 
                 entity.HasOne(d => d.Infrastructure)
-                    .WithMany(p => p.Notifications)
+                    .WithMany(p => p.Notification)
                     .HasForeignKey(d => d.InfrastructureId)
                     .HasConstraintName("FK_Notification_Infrastructure");
 
                 entity.HasOne(d => d.Region)
-                    .WithMany(p => p.Notifications)
+                    .WithMany(p => p.Notification)
                     .HasForeignKey(d => d.RegionId)
                     .HasConstraintName("FK_Notification_Region");
             });
 
             modelBuilder.Entity<NotificationUser>(entity =>
             {
-                entity.ToTable("NotificationUser");
                 entity.Property(e => e.NotificationUserId).ValueGeneratedNever();
 
                 entity.Property(e => e.ReadedOnDateTime).HasColumnType("datetime");
@@ -599,14 +606,13 @@ namespace Iatec.Databases
                 entity.Property(e => e.UserName).HasMaxLength(150);
 
                 entity.HasOne(d => d.Notification)
-                    .WithMany(p => p.NotificationUsers)
+                    .WithMany(p => p.NotificationUser)
                     .HasForeignKey(d => d.NotificationId)
                     .HasConstraintName("FK_NotificationUser_Notification");
             });
 
             modelBuilder.Entity<Organization>(entity =>
             {
-                entity.ToTable("Organization");
                 entity.Property(e => e.OrganizationId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
@@ -624,17 +630,16 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<OrgResponsible>(entity =>
             {
-                entity.ToTable("OrgResponsible");
                 entity.Property(e => e.OrgResponsibleId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Client)
-                    .WithMany(p => p.OrgResponsibles)
+                    .WithMany(p => p.OrgResponsible)
                     .HasForeignKey(d => d.ClientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrgRespon__Clien__40F9A68C");
 
                 entity.HasOne(d => d.Organization)
-                    .WithMany(p => p.OrgResponsibles)
+                    .WithMany(p => p.OrgResponsible)
                     .HasForeignKey(d => d.OrganizationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrgRespon__Organ__40058253");
@@ -642,7 +647,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Package>(entity =>
             {
-                entity.ToTable("Package");
                 entity.Property(e => e.PackageId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedBy).HasMaxLength(100);
@@ -653,7 +657,7 @@ namespace Iatec.Databases
 
                 entity.Property(e => e.FileChecksum)
                     .IsRequired()
-                    .HasColumnType("binary(32)")
+                    .HasMaxLength(32)
                     .HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Name).HasMaxLength(100);
@@ -667,29 +671,28 @@ namespace Iatec.Databases
                 entity.Property(e => e.Title).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppDomain)
-                    .WithMany(p => p.Packages)
+                    .WithMany(p => p.Package)
                     .HasForeignKey(d => d.AppDomainId)
                     .HasConstraintName("FK__Package__AppDoma__19DFD96B");
 
                 entity.HasOne(d => d.PackageType)
-                    .WithMany(p => p.Packages)
+                    .WithMany(p => p.Package)
                     .HasForeignKey(d => d.PackageTypeId)
                     .HasConstraintName("FK__Package__Package__1AD3FDA4");
             });
 
             modelBuilder.Entity<PackageLink>(entity =>
             {
-                entity.ToTable("PackageLink");
                 entity.Property(e => e.PackageLinkId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Package)
-                    .WithMany(p => p.Packages)
+                    .WithMany(p => p.PackageLinkPackage)
                     .HasForeignKey(d => d.PackageId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PackageLi__Packa__2DE6D218");
 
                 entity.HasOne(d => d.PackageLinked)
-                    .WithMany(p => p.LinkedPackages)
+                    .WithMany(p => p.PackageLinkPackageLinked)
                     .HasForeignKey(d => d.PackageLinkedId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PackageLi__Packa__2CF2ADDF");
@@ -697,7 +700,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<PackageRelease>(entity =>
             {
-                entity.ToTable("PackageRelease");
                 entity.Property(e => e.PackageReleaseId).ValueGeneratedNever();
 
                 entity.Property(e => e.ReleaseDate).HasColumnType("datetime");
@@ -707,29 +709,28 @@ namespace Iatec.Databases
                 entity.Property(e => e.ReleasedBy).HasMaxLength(100);
 
                 entity.HasOne(d => d.AppDeploy)
-                    .WithMany(p => p.PackageReleases)
+                    .WithMany(p => p.PackageRelease)
                     .HasForeignKey(d => d.AppDeployId)
                     .HasConstraintName("FK__PackageRe__AppDe__3587F3E0");
 
                 entity.HasOne(d => d.Client)
-                    .WithMany(p => p.PackageReleases)
+                    .WithMany(p => p.PackageRelease)
                     .HasForeignKey(d => d.ClientId)
                     .HasConstraintName("FK__PackageRe__Clien__339FAB6E");
 
                 entity.HasOne(d => d.Package)
-                    .WithMany(p => p.PackageReleases)
+                    .WithMany(p => p.PackageRelease)
                     .HasForeignKey(d => d.PackageId)
                     .HasConstraintName("FK__PackageRe__Packa__32AB8735");
 
                 entity.HasOne(d => d.Region)
-                    .WithMany(p => p.PackageReleases)
+                    .WithMany(p => p.PackageRelease)
                     .HasForeignKey(d => d.RegionId)
                     .HasConstraintName("FK__PackageRe__Regio__3493CFA7");
             });
 
             modelBuilder.Entity<PackageType>(entity =>
             {
-                entity.ToTable("PackageType");
                 entity.Property(e => e.PackageTypeId).ValueGeneratedNever();
 
                 entity.Property(e => e.Code).HasMaxLength(100);
@@ -739,7 +740,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Region>(entity =>
             {
-                entity.ToTable("Region");
                 entity.Property(e => e.RegionId).ValueGeneratedNever();
 
                 entity.Property(e => e.CultureCode)
@@ -755,7 +755,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<RegionalSettings>(entity =>
             {
-                entity.ToTable("RegionalSettings");
                 entity.Property(e => e.RegionalSettingsId).ValueGeneratedNever();
 
                 entity.Property(e => e.SupportEmail).HasMaxLength(50);
@@ -777,7 +776,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<Scope>(entity =>
             {
-                entity.ToTable("Scope");
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(1024)
@@ -801,7 +799,6 @@ namespace Iatec.Databases
 
             modelBuilder.Entity<ScopeSecret>(entity =>
             {
-                entity.ToTable("ScopeSecret");
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
                     .HasMaxLength(100)
@@ -816,8 +813,6 @@ namespace Iatec.Databases
 
                 entity.Property(e => e.Expiration).HasColumnType("datetime");
 
-                entity.Property(e => e.ScopeId).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ScopeOldId)
                     .HasColumnName("Scope_old_id")
                     .HasMaxLength(32)
@@ -825,10 +820,10 @@ namespace Iatec.Databases
 
                 entity.Property(e => e.SecretHash)
                     .IsRequired()
-                    .HasColumnType("binary(32)");
+                    .HasMaxLength(32);
 
                 entity.HasOne(d => d.Scope)
-                    .WithMany(p => p.ScopeSecrets)
+                    .WithMany(p => p.ScopeSecret)
                     .HasForeignKey(d => d.ScopeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Scope_Id");
