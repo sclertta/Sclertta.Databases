@@ -2,7 +2,7 @@ set Configuration=Release
 set OutputDir=artifacts\
 
 dotnet build -c %Configuration% src\Sclertta.Databases.sln
-dotnet pack -c %Configuration% src\Sclertta.Databases.sln
+dotnet pack  -c %Configuration% src\Sclertta.Databases.sln
 
 if not exist %OutputDir% mkdir %OutputDir%
 

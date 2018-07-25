@@ -3,4 +3,6 @@ solution: src/Sclertta.Databases.sln
 mono: none
 dotnet: 2.1.202
 script:
+ - dotnet build -c Release src/Sclertta.Databases.sln
+ - dotnet pack  -c Release src/Sclertta.Databases.sln
  - ./build.sh
