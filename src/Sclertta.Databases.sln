@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Rbac", "Sclertta.Databases.AccessControl\Sclertta.Databases.Rbac.csproj", "{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Rbac", "Sclertta.Databases.Rbac\Sclertta.Databases.Rbac.csproj", "{5A872839-E4F3-4694-A99B-3A2E1AFA68C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Accounts", "Sclertta.Databases.Accounts\Sclertta.Databases.Accounts.csproj", "{B7D8C167-1F83-42BC-90A0-3C31695EEDAA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Applications", "Sclertta.Databases.Applications\Sclertta.Databases.Applications.csproj", "{0286207F-D87F-4384-B32B-390E449509E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Users", "Sclertta.Databases.Gan\Sclertta.Databases.Users.csproj", "{24C265C9-6F98-4731-BAEA-793FEC140139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Users", "Sclertta.Databases.Users\Sclertta.Databases.Users.csproj", "{24C265C9-6F98-4731-BAEA-793FEC140139}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.State", "Sclertta.Databases.SessionStorage\Sclertta.Databases.State.csproj", "{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.State", "Sclertta.Databases.State\Sclertta.Databases.State.csproj", "{7220CE3F-0BC4-4661-A43E-039BCC5A4D7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Personnel", "Sclertta.Databases.Aps\Sclertta.Databases.Personnel.csproj", "{3B85DC33-6209-4CCF-8A11-704440A5CD20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Personnel", "Sclertta.Databases.Personnel\Sclertta.Databases.Personnel.csproj", "{3B85DC33-6209-4CCF-8A11-704440A5CD20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Persons", "Sclertta.Databases.PeopleMgmt\Sclertta.Databases.Persons.csproj", "{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sclertta.Databases.Persons", "Sclertta.Databases.Persons\Sclertta.Databases.Persons.csproj", "{BD5FCB7D-EC2E-438B-BDAD-A2CFAE573259}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{FC7F4D0C-68B8-438F-8337-EEDA3AEC683D}"
 EndProject
