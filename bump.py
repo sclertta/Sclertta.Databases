@@ -47,7 +47,7 @@ def bump_proj(path, next):
     
 def bump_all(version):
     for shortname in projects:
-		proj = "Sclertta.Databases.%s" % shortname
+        proj = "Sclertta.Databases.%s" % shortname
         bump_proj('src/%s/%s.csproj' % (proj, proj), version)
               
 if __name__ == '__main__':
