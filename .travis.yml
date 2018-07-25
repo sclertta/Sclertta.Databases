@@ -3,4 +3,4 @@ solution: src/Sclertta.Databases.sln
 mono: none
 dotnet: 2.1.202
 script:
- - build.sh
+ - ./build.sh
