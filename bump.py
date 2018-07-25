@@ -1,5 +1,5 @@
 import sys
-from lxml import etree
+import xml.etree.ElementTree as ET
 
 projects = [
     "Accounts",
@@ -37,9 +37,8 @@ def bump_number(current, next):
     return '.'.join([str(x) for x in result[:size]])
 
 def bump_proj(path, next):
-    xml = etree.parse(path)
-    vnodes = xml.xpath('/Project/PropertyGroup/Version')
-    vnode = vnodes[0]
+    xml = ET.parse(path)
+    vnode = xml.find('PropertyGroup/Version')
     version = bump_number(vnode.text, next)
     vnode.text = version
     xml.write(path)
