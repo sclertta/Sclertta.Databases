@@ -1,7 +1,7 @@
 #!/bin/bash
 
-set Configuration=Release
-set OutputDir=artifacts/
+Configuration=Release
+OutputDir=artifacts/
 
 dotnet build -c $Configuration src/Sclertta.Databases.sln
 dotnet pack  -c $Configuration src/Sclertta.Databases.sln
