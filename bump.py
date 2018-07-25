@@ -11,6 +11,8 @@ projects = [
     "Users",
 ]
 def bump_number(current, next):
+    if next.startswith('v'):
+        next = next[1:]
     sp = current.split('.')
     major = int(sp[0])
     minor = int(sp[1]) if len(sp) > 1 else 0
