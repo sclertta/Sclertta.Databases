@@ -8,7 +8,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: ./deploy/deploy.sh $NUGET_SOURCE $NUGET_API_KEY
+  script: ./build/deploy.sh $NUGET_SOURCE $NUGET_API_KEY
   on:
     branch: master
   #   tags: true

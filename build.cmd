@@ -17,7 +17,7 @@ dotnet pack -c %Configuration% src\Sclertta.Databases.sln
 
 REM Delete OutputDir
 if exist %OutputDir% rmdir /s/q %OutputDir%
-mkdir $OutputDir
+mkdir %OutputDir%
 
 REM Copy nuget packages to OutputDir
 copy src\Sclertta.Databases.Accounts\bin\%Configuration%\*.nupkg %OutputDir%
