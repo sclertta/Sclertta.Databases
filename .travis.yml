@@ -3,7 +3,7 @@ solution: src/Sclertta.Databases.sln
 mono: none
 dotnet: 2.1.202
 script:
-  - ./bump.sh $TRAVIS_TAG
+  - ./build/bump.sh $TRAVIS_TAG
   - ./build.sh
 deploy:
   skip_cleanup: true
