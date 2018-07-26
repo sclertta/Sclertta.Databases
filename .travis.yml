@@ -8,7 +8,6 @@ branches:
   - master
   - develop
 script:
-  #- ./build/bump.sh $TRAVIS_TAG
   - ./build.sh
 deploy:
   skip_cleanup: true
@@ -16,4 +15,3 @@ deploy:
   script: ./build/deploy.sh $NUGET_SOURCE $NUGET_API_KEY
   on:
     branch: master
-    tags: true
