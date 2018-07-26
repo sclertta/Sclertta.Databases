@@ -6,4 +6,6 @@ set ARTIFACTS_DIR=%SCRIPT_DIR%..\artifacts\
 set Source=%1
 set ApiKey=%2
 
-dotnet nuget push %ARTIFACTS_DIR%*.nupkg --source %Source% --api-key %ApiKey%
+for %%f in (%ARTIFACTS_DIR%*.nupkg) do (
+    dotnet nuget push %%f --source %Source% --api-key %ApiKey%
+)
