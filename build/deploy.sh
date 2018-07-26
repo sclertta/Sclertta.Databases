@@ -6,6 +6,6 @@ ARTIFACTS_DIR=${SCRIPT_DIR}../artifacts/
 Source=$1
 ApiKey=$2
 
-for filename in ${ARTIFACTS_DIR}*.nupkg; do
-    dotnet nuget push $filename --source $Source --api-key $ApiKey    
+for f in ${ARTIFACTS_DIR}*.nupkg; do
+    dotnet nuget push $f --source $Source --api-key $ApiKey    
 done
