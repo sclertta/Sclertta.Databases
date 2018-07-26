@@ -2,8 +2,13 @@ language: csharp
 solution: src/Sclertta.Databases.sln
 mono: none
 dotnet: 2.1.202
+before_script:
+branches:
+  only:
+  - master
+  - develop
 script:
-  - ./build/bump.sh $TRAVIS_TAG
+  #- ./build/bump.sh $TRAVIS_TAG
   - ./build.sh
 deploy:
   skip_cleanup: true
