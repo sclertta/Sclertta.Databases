@@ -42,6 +42,7 @@ namespace Sclertta.Databases.Applications
         public Guid? AppSolutionId { get; set; }
         public bool UseTermsOfApplication { get; set; }
         public string RenewRelativeUrl { get; set; }
+        public bool ForceCredentialReminder { get; set; }
 
         public AppCategory AppCategory { get; set; }
         public AppSolution AppSolution { get; set; }
